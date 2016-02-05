@@ -7,8 +7,16 @@ import com.Character;
  */
 public class Action {
     public static void Fight (Character c, Character c2) {
-        int damage = (c.attack*10) - (c2.defence*5); //placeholder values
-        c2.health = c2.health - damage;
+        //maybe check if health is >0.
+        int damage = (c.getAttack()*10) - (c2.getDefence()*5); //placeholder values
+        c2.setHealth(c2.getHealth() - damage);
+        if (c.getDead()){
+            //remove action-phase or make unplayable somehow.
+        }
+        if (c2.getDead()){
+
+        }
+
     }
 
 
