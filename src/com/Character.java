@@ -6,13 +6,15 @@ package com;
 public class Character {
     public String name;
     public Job job;
+    public int health;
+    public int MP;
     public int attack;
     public int defence;
     public int speed;
     public int magic;
     public int magicDefence;
 
-    public Character(String name, Job job, int attack, int defence, int speed, int magic, int magicDefence) {
+    public Character(String name, Job job,int health, int mp, int attack, int defence, int speed, int magic, int magicDefence) {
         this.name = name;
         this.job = job;
         this.attack = attack;
