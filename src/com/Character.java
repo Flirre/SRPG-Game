@@ -7,7 +7,7 @@ public class Character {
     public String name;
     public Job job;
     public int health;
-    public int MP;
+    public int mp;
     public int attack;
     public int defence;
     public int speed;
@@ -17,11 +17,17 @@ public class Character {
     public Character(String name, Job job,int health, int mp, int attack, int defence, int speed, int magic, int magicDefence) {
         this.name = name;
         this.job = job;
+        this.health = health;
+        this.mp= mp;
         this.attack = attack;
         this.defence = defence;
         this.speed = speed;
         this.magic = magic;
         this.magicDefence = magicDefence;
+    }
+
+    public int getHealth() {
+        return this.health;
     }
 
     public int getAttack(){
