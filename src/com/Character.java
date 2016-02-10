@@ -38,24 +38,64 @@ public class Character {
         this.health = newHealth;
     }
 
+    public Job getJob() {
+        return this.job;
+    }
+
+    public void setJob(Job newJob) {
+        this.job = newJob;
+    }
+
+    public int getMp() {
+        return this.mp;
+    }
+
+    public void setMp(int newMp) {
+        this.mp = newMp;
+    }
+
     public int getAttack(){
         return this.attack;
+    }
+
+    public void setAttack(int newAttack) {
+        this.attack = newAttack;
     }
 
     public int getDefence(){
         return this.defence;
     }
 
+    public void setDefence(int newDefence) {
+        this.defence = newDefence;
+    }
+
     public int getSpeed(){
         return this.speed;
+    }
+
+    public void setSpeed(int newSpeed) {
+        this.speed = newSpeed;
     }
 
     public int getMagic(){
         return this.magic;
     }
 
+    public void setMagic(int newMagic) {
+        this.magic = newMagic;
+    }
+
     public int getMagicDefence(){
         return this.magicDefence;
+    }
+
+    public void setMagicDefence(int newMagicDefence) {
+        this.magicDefence = newMagicDefence;
+    }
+
+    public boolean getDead() {
+        return this.isDead;
     }
 
     public void setDead(){
@@ -63,10 +103,6 @@ public class Character {
             this.isDead = true;
         }
     }
-    public boolean getDead(){
-        return this.isDead;
-    }
-
     public enum Job {
         Warrior, Archer
     }
