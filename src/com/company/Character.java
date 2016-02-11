@@ -1,4 +1,4 @@
-package com;
+package com.company;
 
 /**
  * Created by flirre on 2016-02-05.
@@ -7,6 +7,7 @@ public class Character {
     //should values be private?
     private String name;
     private Job job;
+    private int level;
     private int health;
     private int mp;
     private int attack;
@@ -17,9 +18,10 @@ public class Character {
     private boolean isDead;
 
 
-    public Character(String name, Job job,int health, int mp, int attack, int defence, int speed, int magic, int magicDefence, boolean isDead) {
+    public Character(String name, Job job, int level, int health, int mp, int attack, int defence, int speed, int magic, int magicDefence, boolean isDead) {
         this.name = name;
         this.job = job;
+        this.level = level;
         this.health = health;
         this.mp= mp;
         this.attack = attack;
@@ -28,6 +30,20 @@ public class Character {
         this.magic = magic;
         this.magicDefence = magicDefence;
         this.isDead = isDead;
+    }
+
+    public Character(String name){
+        this.name = name;
+        this.job = Job.Warrior;
+        this.level = 1;
+        this.health = 5;
+        this.mp = 5;
+        this.attack = 10;
+        this.defence = 10;
+        this.speed = 4;
+        this.magic = 10;
+        this.magicDefence = 10;
+        this.isDead = false;
     }
 
     public int getHealth() {
@@ -44,6 +60,14 @@ public class Character {
 
     public void setJob(Job newJob) {
         this.job = newJob;
+    }
+
+    public int getLevel() {
+        return this.level;
+    }
+
+    public void setLevel(int newLevel) {
+        this.level = newLevel;
     }
 
     public int getMp() {

@@ -1,7 +1,5 @@
 package com.company;
 
-import com.Character;
-
 /**
  * Created by flirre on 2016-02-05.
  */
