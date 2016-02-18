@@ -18,6 +18,7 @@ public class Character {
     private boolean isDead;
     private int xpos;
     private int ypos;
+    protected boolean isFree;
 
 
     public Character(String name, Job job, int level, int health, int mp, int attack, int defence, int speed, int magic, int magicDefence, boolean isDead, int xpos, int ypos) {
@@ -142,27 +143,4 @@ public class Character {
         Warrior, Archer
     }
 
-    public enum Right_Hand {
-        Nothing, Small_sword, Big_sword, Small_bow, Big_bow
-    }
-
-    public enum Left_Hand {
-        Nothing, Small_shield, Big_shield, Dagger, Wand
-    }
-
-    public enum Headgear {
-        Nothing, Helmet
-    }
-
-    public enum Torso {
-        Nothing, Leather_armor
-    }
-
-    public enum Legs {
-        Nothing, Leather_greaves
-    }
-
-    public enum Shoes {
-        Nothing, Leather_shoes
-    }
 }
