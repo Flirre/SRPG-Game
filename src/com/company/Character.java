@@ -1,10 +1,13 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.ListIterator;
+
 /**
  * Created by flirre on 2016-02-05.
  */
 public class Character {
-    //should values be private?
     private String name;
     private Job job;
     private int level;
@@ -18,7 +21,10 @@ public class Character {
     private boolean isDead;
     private int xpos;
     private int ypos;
-    protected boolean isFree;
+    protected boolean swordisFree;
+    protected boolean shieldisFree;
+    protected boolean TorsoisFree;
+    protected ArrayList<Equipment> equipped;
 
 
     public Character(String name, Job job, int level, int health, int mp, int attack, int defence, int speed, int magic, int magicDefence, boolean isDead, int xpos, int ypos) {
@@ -35,6 +41,7 @@ public class Character {
         this.isDead = isDead;
         this.xpos = xpos;
         this.ypos = ypos;
+        equipped = new ArrayList<Equipment>(10);
 
     }
 
@@ -143,4 +150,18 @@ public class Character {
         Warrior, Archer
     }
 
+    public String hasEquipped(){
+        ListIterator<Equipment> it = equipped.listIterator();
+        String[] equipmentList = new String[8];
+        int i = 0;
+        while (it.hasNext()){
+            equipmentList[i] = it.next().getName();
+            i+=1;
+        }
+    return Arrays.toString(equipmentList);
+
+    }
+    public void equip(Equipment equipment){
+        equipped.add(equipment);
+    }
 }

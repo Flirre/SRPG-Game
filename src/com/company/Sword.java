@@ -5,4 +5,9 @@ package com.company;
  */
 public class Sword extends Equipment {
     protected int damage;
+
+    public Sword (String name, int weight, int durability, int damage){
+        super(name, weight, durability);
+        this.damage = damage;
+    }
 }

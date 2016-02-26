@@ -8,5 +8,14 @@ public abstract class Equipment {
     protected int weight;
     protected int durability;
 
+    public Equipment(String name, int weight, int durability){
+        this.name = name;
+        this.weight = weight;
+        this.durability = durability;
+    }
+
+    protected String getName(){
+        return this.name;
+    }
 
 }
