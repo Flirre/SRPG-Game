@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 import java.util.ListIterator;
 
 /**
@@ -41,7 +41,7 @@ public class Character {
         this.isDead = isDead;
         this.xpos = xpos;
         this.ypos = ypos;
-        equipped = new ArrayList<Equipment>(10);
+        equipped = new ArrayList<Equipment>();
 
     }
 
@@ -150,15 +150,14 @@ public class Character {
         Warrior, Archer
     }
 
-    public String hasEquipped(){
+    public List<String> hasEquipped(){
         ListIterator<Equipment> it = equipped.listIterator();
-        String[] equipmentList = new String[8];
+        List<String> equipmentList = new ArrayList<String>();
         int i = 0;
         while (it.hasNext()){
-            equipmentList[i] = it.next().getName();
-            i+=1;
+            equipmentList.add(it.next().name);
         }
-    return Arrays.toString(equipmentList);
+    return equipmentList;
 
     }
     public void equip(Equipment equipment){

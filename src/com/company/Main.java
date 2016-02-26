@@ -6,7 +6,7 @@ public class Main {
     Character debug = new Character("Debug");
     Character debug2 = new Character("Debug2");
     ShortSword testsword = new ShortSword(("Test"));
-    System.out.println(testsword.getName());
+    System.out.println(testsword.name);
     System.out.println(debug.hasEquipped());
     debug.equip(testsword);
     System.out.println(debug.hasEquipped());
