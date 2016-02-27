@@ -11,19 +11,16 @@ public class Main {
 
     System.out.println(testweapon.name);
     System.out.println(testsword.name);
-    System.out.println(testarmor.name);
-    System.out.println(debug.hasWeaponEquipped());
-    System.out.println("Starting Equip!");
-    //debug.equipWeapon(testsword);
-    //debug.equip(testarmor);
-    //debug.equipWeapon(testsword);
-    //debug.equip(testarmor);
-    System.out.println("Equip Successful!");
-    System.out.println(debug.hasWeaponEquipped());
-
+    System.out.println(testsword.damage);
+    System.out.println(debug.equippedDamage());
+    System.out.println("Start Equip");
+    debug.equipWeapon(testsword);
+    debug.equipWeapon(testsword);
+    System.out.println(debug.equippedDamage());
+    System.out.println("Equip Finished");
     Action.Fight(debug,debug2);
-        debug.setDead();
-        debug2.setDead();
+        debug.checkDead();
+        debug2.checkDead();
     System.out.println(debug.getHealth());
     System.out.println(debug2.getHealth());
     System.out.println("Is debug dead? " + debug.getDead());

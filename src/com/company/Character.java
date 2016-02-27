@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ListIterator;
 
 /**
@@ -24,9 +23,7 @@ public class Character {
     protected boolean swordisFree;
     protected boolean shieldisFree;
     protected boolean TorsoisFree;
-    protected ArrayList<Equipment> equipped;
     protected ArrayList<Weapon> equippedWeapons;
-    protected ArrayList<Armor> equippedArmor;
 
 
     public Character(String name, Job job, int level, int health, int mp, int attack, int defence, int speed, int magic, int magicDefence, boolean isDead, int xpos, int ypos) {
@@ -34,7 +31,7 @@ public class Character {
         this.job = job;
         this.level = level;
         this.health = health;
-        this.mp= mp;
+        this.mp = mp;
         this.attack = attack;
         this.defence = defence;
         this.speed = speed;
@@ -43,11 +40,11 @@ public class Character {
         this.isDead = isDead;
         this.xpos = xpos;
         this.ypos = ypos;
-        equipped = new ArrayList<Equipment>();
+        this.equippedWeapons = new ArrayList<Weapon>();
 
     }
 
-    public Character(String name){
+    public Character(String name) {
         this(name, Job.Warrior, 1, 1, 1, 1, 1, 1, 1, 1, false, 0, 0);
     }
 
@@ -55,7 +52,7 @@ public class Character {
         return this.health;
     }
 
-    public void setHealth(int newHealth){
+    public void setHealth(int newHealth) {
         this.health = newHealth;
     }
 
@@ -83,7 +80,7 @@ public class Character {
         this.mp = newMp;
     }
 
-    public int getAttack(){
+    public int getAttack() {
         return this.attack;
     }
 
@@ -91,7 +88,7 @@ public class Character {
         this.attack = newAttack;
     }
 
-    public int getDefence(){
+    public int getDefence() {
         return this.defence;
     }
 
@@ -99,7 +96,7 @@ public class Character {
         this.defence = newDefence;
     }
 
-    public int getSpeed(){
+    public int getSpeed() {
         return this.speed;
     }
 
@@ -107,7 +104,7 @@ public class Character {
         this.speed = newSpeed;
     }
 
-    public int getMagic(){
+    public int getMagic() {
         return this.magic;
     }
 
@@ -115,7 +112,7 @@ public class Character {
         this.magic = newMagic;
     }
 
-    public int getMagicDefence(){
+    public int getMagicDefence() {
         return this.magicDefence;
     }
 
@@ -127,8 +124,8 @@ public class Character {
         return this.isDead;
     }
 
-    public void setDead() {
-        if (getHealth()<1){
+    public void checkDead() {
+        if (getHealth() < 1) {
             this.isDead = true;
         }
     }
@@ -148,25 +145,30 @@ public class Character {
     public void setYpos(int newYpos) {
         this.ypos = newYpos;
     }
+
     public enum Job {
         Warrior, Archer
     }
 
-
-
-    public List<Integer> hasWeaponEquipped() {
-        ListIterator<Weapon> wIt = equippedWeapons.listIterator();
-        List<Integer> damageList = new ArrayList<Integer>();
-        while (wIt.hasNext()) {
-            damageList.add(wIt.next().damage);
-        }
-    return damageList;
-    }
-
-
     public void equipWeapon(Weapon weapon){
-        equippedWeapons.add(weapon);
+        this.equippedWeapons.add(weapon);
     }
 
+    public int equippedDamage() {
+        int equippedDamage = 0;
+        ListIterator<Weapon> weaponListIterator = equippedWeapons.listIterator();
+        ArrayList<Integer> damageList = new ArrayList<>();
+
+        while (weaponListIterator.hasNext()){
+            damageList.add(weaponListIterator.next().damage);
+        }
+
+        for (int i : damageList) {
+            equippedDamage = equippedDamage + damageList.get(i);
+
+        }
+
+        return equippedDamage;
+    }
 
 }
