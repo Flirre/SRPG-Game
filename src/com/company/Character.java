@@ -25,6 +25,8 @@ public class Character {
     protected boolean shieldisFree;
     protected boolean TorsoisFree;
     protected ArrayList<Equipment> equipped;
+    protected ArrayList<Weapon> equippedWeapons;
+    protected ArrayList<Armor> equippedArmor;
 
 
     public Character(String name, Job job, int level, int health, int mp, int attack, int defence, int speed, int magic, int magicDefence, boolean isDead, int xpos, int ypos) {
@@ -150,17 +152,21 @@ public class Character {
         Warrior, Archer
     }
 
-    public List<String> hasEquipped(){
-        ListIterator<Equipment> it = equipped.listIterator();
-        List<String> equipmentList = new ArrayList<String>();
-        int i = 0;
-        while (it.hasNext()){
-            equipmentList.add(it.next().name);
-        }
-    return equipmentList;
 
+
+    public List<Integer> hasWeaponEquipped() {
+        ListIterator<Weapon> wIt = equippedWeapons.listIterator();
+        List<Integer> damageList = new ArrayList<Integer>();
+        while (wIt.hasNext()) {
+            damageList.add(wIt.next().damage);
+        }
+    return damageList;
     }
-    public void equip(Equipment equipment){
-        equipped.add(equipment);
+
+
+    public void equipWeapon(Weapon weapon){
+        equippedWeapons.add(weapon);
     }
+
+
 }

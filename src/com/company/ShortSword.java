@@ -11,4 +11,5 @@ public class ShortSword extends Sword {
     public ShortSword(String name){
         super(name, 1, 1, 1);
     }
+
 }
