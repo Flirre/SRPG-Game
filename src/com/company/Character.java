@@ -157,7 +157,7 @@ public class Character {
     public int equippedDamage() {
         int equippedDamage = 0;
         ListIterator<Weapon> weaponListIterator = equippedWeapons.listIterator();
-        ArrayList<Integer> damageList = new ArrayList<>();
+        ArrayList<Integer> damageList = new ArrayList<>(); //Make sure to use this ArrayList somehow, otherwise simplify this method if possible.
 
         while (weaponListIterator.hasNext()){
             damageList.add(weaponListIterator.next().damage);
