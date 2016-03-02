@@ -13,5 +13,6 @@ public class Armor extends Equipment {
 
     public Armor(String name) {
         super(name, 1, 1);
+        this.defense = 1;
     }
 }

@@ -24,6 +24,7 @@ public class Character {
     protected boolean shieldisFree;
     protected boolean TorsoisFree;
     protected ArrayList<Weapon> equippedWeapons;
+    protected ArrayList<Armor>  equippedArmor;
 
 
     public Character(String name, Job job, int level, int health, int mp, int attack, int defence, int speed, int magic, int magicDefence, boolean isDead, int xpos, int ypos) {
@@ -41,6 +42,7 @@ public class Character {
         this.xpos = xpos;
         this.ypos = ypos;
         this.equippedWeapons = new ArrayList<Weapon>();
+        this.equippedArmor = new ArrayList<Armor>();
 
     }
 
@@ -154,6 +156,10 @@ public class Character {
         this.equippedWeapons.add(weapon);
     }
 
+    public void equipArmor(Armor armor) {
+        this.equippedArmor.add(armor);
+    }
+
     public int equippedDamage() {
         int equippedDamage = 0;
         ListIterator<Weapon> weaponListIterator = equippedWeapons.listIterator();
@@ -169,6 +175,23 @@ public class Character {
         }
 
         return equippedDamage;
+    }
+
+    public int equippedDefence(){
+        int equippedDefence = 0;
+        ListIterator<Armor> armorListIterator = equippedArmor.listIterator();
+        ArrayList<Integer> defenceList = new ArrayList<>();//See above
+
+        while (armorListIterator.hasNext()){
+            defenceList.add(armorListIterator.next().defense);
+        }
+
+        for (int i=0; i<defenceList.size(); i++) {
+            equippedDefence = equippedDefence + defenceList.get(i);
+
+        }
+
+        return equippedDefence;
     }
 
 }

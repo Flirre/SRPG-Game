@@ -16,6 +16,7 @@ public class Main {
     System.out.println("Start Equip");
     debug.equipWeapon(testsword);
     debug.equipWeapon(testsword);
+    debug2.equipArmor(testarmor);
     System.out.println(debug.equippedDamage());
     System.out.println("Equip Finished");
     Action.Fight(debug,debug2);
