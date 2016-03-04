@@ -8,7 +8,17 @@ public class Main {
     Weapon testweapon = new Weapon("TestWeapon", 1, 1, 1);
     ShortSword testsword = new ShortSword("TestSword");
     Armor testarmor = new Armor("TestArmor");
-
+    System.out.println("Job:");
+    System.out.println(debug.getJob());
+    System.out.println("Level");
+    System.out.println(debug.getLevel());
+    System.out.println("Health, pre levelup");
+    System.out.println(debug.getHealth());
+    debug.levelUp();
+    System.out.println("Level");
+    System.out.println(debug.getLevel());
+    System.out.println("Health, post levelup");
+    System.out.println(debug.getHealth());
     System.out.println(testweapon.name);
     System.out.println(testsword.name);
     System.out.println(testsword.damage);

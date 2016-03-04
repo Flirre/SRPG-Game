@@ -47,7 +47,7 @@ public class Character {
     }
 
     public Character(String name) {
-        this(name, Job.Warrior, 1, 1, 1, 1, 1, 1, 1, 1, false, 0, 0);
+        this(name, new Warrior(), 1, 1, 1, 1, 1, 1, 1, 1, false, 0, 0);
     }
 
     public int getHealth() {
@@ -148,10 +148,6 @@ public class Character {
         this.ypos = newYpos;
     }
 
-    public enum Job {
-        Warrior, Archer
-    }
-
     public void equipWeapon(Weapon weapon){
         this.equippedWeapons.add(weapon);
     }
@@ -192,6 +188,12 @@ public class Character {
         }
 
         return equippedDefence;
+    }
+
+    public void levelUp(){
+        setLevel(this.level + 1);
+        setHealth(this.health + getJob().healthGrowth);
+        setMp(this.mp + getJob().mpGrowth);
     }
 
 }
