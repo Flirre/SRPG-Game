@@ -7,6 +7,7 @@ public abstract class Equipment {
     protected String name;
     protected int weight;
     protected int durability;
+    protected boolean isEquipped;
 
     public Equipment(String name, int weight, int durability) {
         this.name = name;

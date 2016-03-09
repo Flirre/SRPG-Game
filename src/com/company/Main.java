@@ -3,39 +3,39 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-    Character debug = new Character("Debug");
-    Character debug2 = new Character("Debug2");
-    Weapon testweapon = new Weapon("TestWeapon", 1, 1, 1);
-    ShortSword testsword = new ShortSword("TestSword");
+    Character debug = new Character("Debug", 0, 0);
+    Character debug2 = new Character("Debug2", 0, 1);
+    Map map = new Map(2,2);
+    ShortSword testsword = new ShortSword("TairaSlayer");
     Armor testarmor = new Armor("TestArmor");
-    System.out.println("Job:");
-    System.out.println(debug.getJob());
-    System.out.println("Level");
+    System.out.print("Level: ");
     System.out.println(debug.getLevel());
-    System.out.println("Health, pre levelup");
+    System.out.print("Health, pre levelup: ");
     System.out.println(debug.getHealth());
     debug.levelUp();
-    System.out.println("Level");
+    System.out.print("Level: ");
     System.out.println(debug.getLevel());
-    System.out.println("Health, post levelup");
+    System.out.print("Health, post levelup: ");
     System.out.println(debug.getHealth());
-    System.out.println(testweapon.name);
-    System.out.println(testsword.name);
-    System.out.println(testsword.damage);
-    System.out.println(debug.equippedDamage());
+    System.out.println("Name of Testsword: " + testsword.name);
+    System.out.println("Testswords damage: " + testsword.damage);
+    System.out.println("Equipped damage: " + debug.equippedDamage());
     System.out.println("Start Equip");
     debug.equipWeapon(testsword);
-    debug.equipWeapon(testsword);
+    //debug.equipWeapon(testsword);
     debug2.equipArmor(testarmor);
-    System.out.println(debug.equippedDamage());
+    System.out.println("Equipped Damage: " + debug.equippedDamage());
     System.out.println("Equip Finished");
+    System.out.println("Debugs health prefight: " + debug.getHealth());
+    System.out.println("Debug2s health prefight: " + debug2.getHealth());
     Action.Fight(debug,debug2);
         debug.checkDead();
         debug2.checkDead();
-    System.out.println(debug.getHealth());
-    System.out.println(debug2.getHealth());
+    System.out.println("Debugs health postfight: " + debug.getHealth());
+    System.out.println("Debug2s health postfight: " + debug2.getHealth());
     System.out.println("Is debug dead? " + debug.getDead());
     System.out.println("Is debug2 dead? " + debug2.getDead());
+    map.printMap();
     }
 
 

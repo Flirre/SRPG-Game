@@ -46,8 +46,16 @@ public class Character {
 
     }
 
-    public Character(String name) {
-        this(name, new Warrior(), 1, 1, 1, 1, 1, 1, 1, 1, false, 0, 0);
+    public Character(String name, int xpos, int ypos) {
+        this(name, new Warrior(), 1, 100, 10, 5, 5, 4, 2, 2, false, xpos, ypos);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String newName) {
+        this.name = newName;
     }
 
     public int getHealth() {
@@ -166,7 +174,7 @@ public class Character {
         }
 
         for (int i : damageList) {
-            equippedDamage = equippedDamage + damageList.get(i);
+            equippedDamage = equippedDamage + i;
 
         }
 
@@ -182,8 +190,8 @@ public class Character {
             defenceList.add(armorListIterator.next().defense);
         }
 
-        for (int i=0; i<defenceList.size(); i++) {
-            equippedDefence = equippedDefence + defenceList.get(i);
+        for (int j : defenceList) {
+            equippedDefence = equippedDefence + j;
 
         }
 
@@ -192,8 +200,13 @@ public class Character {
 
     public void levelUp(){
         setLevel(this.level + 1);
-        setHealth(this.health + getJob().healthGrowth);
-        setMp(this.mp + getJob().mpGrowth);
+        setHealth(this.health + this.job.healthGrowth);
+        setMp(this.mp + this.job.mpGrowth);
+        setAttack(this.attack + this.job.attackGrowth);
+        setDefence(this.defence + this.job.defenceGrowth);
+        setSpeed(this.speed + this.job.speedGrowth);
+        setMagic(this.magic + this.job.magicGrowth);
+        setMagicDefence(this.magicDefence + this.job.magicDefenceGrowth);
     }
 
 }
