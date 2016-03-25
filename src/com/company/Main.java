@@ -1,11 +1,13 @@
 package com.company;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
     Character debug = new Character("Debug", 0, 0);
     Character debug2 = new Character("Debug2", 0, 1);
-    Map map = new Map(2,2);
+    Map map = new Map(3,3);
     ShortSword testsword = new ShortSword("TairaSlayer");
     Armor testarmor = new Armor("TestArmor");
     System.out.print("Level: ");
@@ -36,6 +38,7 @@ public class Main {
     System.out.println("Is debug dead? " + debug.getDead());
     System.out.println("Is debug2 dead? " + debug2.getDead());
     map.printMap();
+    map.readMap("/home/flirre/Documents/SRPG-Game/maps/map1.txt"); //temporary until I understand the Files filepath better.
     }
 
 
