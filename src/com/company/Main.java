@@ -38,7 +38,7 @@ public class Main {
     System.out.println("Is debug dead? " + debug.getDead());
     System.out.println("Is debug2 dead? " + debug2.getDead());
     map.printMap();
-    map.readMap("/home/flirre/Documents/SRPG-Game/maps/map1.txt"); //temporary until I understand the Files filepath better.
+    map.readMap("maps/map1.txt"); //temporary until I understand the Files filepath better.
     }
 
 
