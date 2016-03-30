@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
     Character debug = new Character("Debug", 0, 0);
     Character debug2 = new Character("Debug2", 0, 1);
-    Map map = new Map(3,3);
+    Map map = new Map();
     ShortSword testsword = new ShortSword("TairaSlayer");
     Armor testarmor = new Armor("TestArmor");
     System.out.print("Level: ");
