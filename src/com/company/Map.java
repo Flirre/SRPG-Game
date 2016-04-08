@@ -2,28 +2,34 @@ package com.company;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created by flirre on 2016-03-07.
  */
 public class Map {
-    static ArrayList<ArrayList<Integer>> map;
+    static ArrayList<ArrayList<Integer>> totalMap;
+    static ArrayList<Integer> innerMap;
+    int x, y;
 
-    public Map (ArrayList<Integer> x, ArrayList<Integer> y) {
-        this.map = new ArrayList<ArrayList<Integer>>();
+    public Map (ArrayList<Integer> x, ArrayList<ArrayList<Integer>> y) {
+        this.totalMap = new ArrayList<ArrayList<Integer>> (y);
+        this.innerMap = new ArrayList<Integer>(x);
+
+
+    }
+
+    public void printy(){
+        System.out.println(totalMap.toString() );
     }
 
 public void printMap() {
-    for (int[] row: map) {
-        System.out.println(Arrays.toString(row));
+        System.out.println(totalMap.toArray().toString());
     }
 }
-
+/**
 public void readMap(String filepath) throws IOException, NumberFormatException {
     File mapfile = new File(filepath);
     Scanner mapScan = new Scanner(mapfile);
@@ -48,6 +54,4 @@ public void readMap(String filepath) throws IOException, NumberFormatException {
         }
     }
     }
-
-
-}
+*/

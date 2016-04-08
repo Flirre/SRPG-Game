@@ -1,13 +1,22 @@
 package com.company;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
+    ArrayList<Integer> x = new ArrayList<>();
+    x.add(0);
+    x.add(0);
+    x.add(0);
+    ArrayList<ArrayList<Integer>> y = new ArrayList<ArrayList<Integer>>();
+    y.add(x);
+    y.add(x);
+    y.add(x);
     Character debug = new Character("Debug", 0, 0);
     Character debug2 = new Character("Debug2", 0, 1);
-    Map map = new Map();
+    Map map = new Map(x,y);
     ShortSword testsword = new ShortSword("TairaSlayer");
     Armor testarmor = new Armor("TestArmor");
     System.out.print("Level: ");
@@ -37,8 +46,11 @@ public class Main {
     System.out.println("Debug2s health postfight: " + debug2.getHealth());
     System.out.println("Is debug dead? " + debug.getDead());
     System.out.println("Is debug2 dead? " + debug2.getDead());
-    map.printMap();
-    map.readMap("maps/map1.txt"); //temporary until I understand the Files filepath better.
+    System.out.println("printing map..");
+    map.printy();
+    //map.printMap();
+    System.out.println("map printed.");
+    //map.readMap("maps/map1.txt"); //temporary until I understand the Files filepath better.
     }
 
 

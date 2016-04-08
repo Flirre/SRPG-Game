@@ -7,4 +7,5 @@ public class Greatsword extends Sword {
     public Greatsword(String name, int weight, int durability, int damage){
         super(name, weight, durability, damage);
     }
+
 }
