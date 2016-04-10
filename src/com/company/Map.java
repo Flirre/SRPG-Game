@@ -28,30 +28,36 @@ public class Map {
 public void printMap() {
         System.out.println(totalMap.toArray().toString());
     }
-}
-/**
+
 public void readMap(String filepath) throws IOException, NumberFormatException {
     File mapfile = new File(filepath);
     Scanner mapScan = new Scanner(mapfile);
     String mapChar;
     int mapInt = new Integer(0);
     int i = 1;
-    int[] maprow = new int[10];
+    ArrayList<Integer> maprow = new ArrayList<Integer>();
+    ArrayList<ArrayList<Integer>> map = new ArrayList<ArrayList<Integer>>();
     mapScan.useDelimiter(" ");
     while (mapScan.hasNext()) {
         try {
             mapChar = mapScan.next();
-
-            mapInt = Integer.parseInt(mapChar);
-  //          if () {
-                maprow[i] = mapInt;
-                System.out.println((mapInt + i));
-                System.out.println(Arrays.toString(maprow));
-                i++;
-    //        }
+            //System.out.println(mapChar);
+            if (mapChar.equals("|")) {
+                map.add(maprow);
+                maprow.clear();
+            }
+            else {
+                mapInt = Integer.parseInt(mapChar);
+                maprow.add(mapInt);
+//                System.out.println((mapInt + i));
+//                System.out.println(maprow.toString());
+//                i++;
+            }
         } catch (NumberFormatException e) {
             System.out.println("Invalid character in file or empty file.");
         }
     }
-    }
-*/
+    System.out.println(map.toString());
+
+}
+}

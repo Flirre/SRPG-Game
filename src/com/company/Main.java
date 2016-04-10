@@ -50,7 +50,7 @@ public class Main {
     map.printy();
     //map.printMap();
     System.out.println("map printed.");
-    //map.readMap("maps/map1.txt"); //temporary until I understand the Files filepath better.
+    map.readMap("maps/map1.txt");
     }
 
 
