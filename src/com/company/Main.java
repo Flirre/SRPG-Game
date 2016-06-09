@@ -9,11 +9,11 @@ public class Main {
     ArrayList<Integer> x = new ArrayList<>();
     x.add(0);
     x.add(0);
-    x.add(0);
+    x.add(0); // x = [0,0,0]
     ArrayList<ArrayList<Integer>> y = new ArrayList<ArrayList<Integer>>();
     y.add(x);
     y.add(x);
-    y.add(x);
+    y.add(x); // y = [[0,0,0],[0,0,0],[0,0,0]]
     Character debug = new Character("Debug", 0, 0);
     Character debug2 = new Character("Debug2", 0, 1);
     Map map = new Map(x,y);
