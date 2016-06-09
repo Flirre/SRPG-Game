@@ -3,7 +3,6 @@ package com.company;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -41,7 +40,6 @@ public void readMap(String filepath) throws IOException, NumberFormatException {
     while (mapScan.hasNext()) {
         try {
             mapChar = mapScan.next();
-            //System.out.println(mapChar);
             if (mapChar.equals("|")) {
                 map.add(maprow);
                 maprow = new ArrayList<Integer>();
@@ -50,9 +48,6 @@ public void readMap(String filepath) throws IOException, NumberFormatException {
             else {
                 mapInt = Integer.parseInt(mapChar);
                 maprow.add(mapInt);
-//                System.out.println((mapInt + i));
-//                System.out.println(maprow.toString());
-//                i++;
             }
         } catch (NumberFormatException e) {
             System.out.println("Invalid character in file or empty file.");
