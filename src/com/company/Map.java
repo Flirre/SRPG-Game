@@ -44,6 +44,7 @@ public void readMap(String filepath) throws IOException, NumberFormatException {
             //System.out.println(mapChar);
             if (mapChar.equals("|")) {
                 map.add(maprow);
+                maprow = new ArrayList<Integer>();
                 maprow.clear();
             }
             else {
@@ -57,6 +58,7 @@ public void readMap(String filepath) throws IOException, NumberFormatException {
             System.out.println("Invalid character in file or empty file.");
         }
     }
+    map.remove(0);
     System.out.println(map.toString());
 
 }
