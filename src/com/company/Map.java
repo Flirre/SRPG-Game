@@ -15,7 +15,7 @@ public class Map {
      * The Map object and what it consists of.
      * @param map - An ArrayList where all the Tiles will be stored.
      */
-    public Map(ArrayList<Tile> map) {
+    public Map (ArrayList<Tile> map) {
         this.map = map;
     }
 
@@ -23,8 +23,11 @@ public class Map {
      * Create a map of just one tile.
      * @param tile
      */
-    public Map(Tile tile){
+    public Map (Tile tile){
         this.map.add(tile);
+    }
+
+    public Map (){
     }
 
     /**
@@ -32,9 +35,9 @@ public class Map {
      * @param filepath - The path to the map file.
      * @return - A Map object.
      */
-    public ArrayList<Integer> readMap(String filepath) {
+    public ArrayList readMap(String filepath) {
         Scanner mapScan;
-        ArrayList<Integer> map = new ArrayList<Integer>();
+        ArrayList map = new ArrayList();
         System.out.println((map));
         try {
             mapScan = new Scanner(new File(filepath));
