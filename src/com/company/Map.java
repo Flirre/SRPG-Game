@@ -38,17 +38,17 @@ public class Map {
         System.out.println((map));
         try {
             mapScan = new Scanner(new File(filepath));
-                String mapChar;
+            String mapChar;
             mapScan.useDelimiter(" ");
 
             while(mapScan.hasNext()) {
-            mapChar = mapScan.next();
-            System.out.println(mapChar);
+                mapChar = mapScan.next();
+                System.out.println(mapChar);
                 try {
                     map.add(Integer.parseInt(mapChar));
                 }
                 catch (NumberFormatException e) {
-                //System.out.println("Map read error.");
+                    //System.out.println("Map read error.");
                 }
             }
         }
