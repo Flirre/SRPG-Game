@@ -37,14 +37,14 @@ public class Main {
     System.out.println("Debug2s health postfight: " + debug2.getHealth());
     System.out.println("Is debug dead? " + debug.getDead());
     System.out.println("Is debug2 dead? " + debug2.getDead());
-    Tile testTile = new Tile();
+    Tile testTile = new Tile(Tile.Type.LAVA);
     Map map = new Map(testTile);
     System.out.println("printing testtile..");
-    System.out.println(testTile.ToString());
+    System.out.println(testTile.getType());
     System.out.println("printing map..");
     System.out.println(map);
     ArrayList<Integer> map1 = map.readMap("maps/map1.txt"); // Just change ArrayList stuff to Map when readmap has been updated.
-    //map1.get(1);
+    System.out.println(map.getTile(0,0,1).getType());
     }
 
 
