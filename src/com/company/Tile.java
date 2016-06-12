@@ -4,25 +4,27 @@ package com.company;
  * Created by flirre on 09/06/16.
  */
 public class Tile {
-    private int zpos;
-    private String terrain;
-
-    public Tile (String terrain) {
-        this.zpos = 0;
-        this.terrain = terrain;
+    private int[] pos;
+    private Type type;
+    public enum Type {
+        GRASS, WATER, LAVA, STONE, DIRT
     }
 
-    public Tile(int zpos, String terrain) {
-        this.zpos = zpos;
-        this.terrain = terrain;
+    public Tile(int[] pos, Type type) {
+        this.pos = pos;
+        this.type = type;
+    }
+
+
+    public Tile (Type type) {
+        this(new int[] {0,0,0}, type);
     }
 
     public Tile() {
-        this.zpos = 0;
-        this.terrain = "Grass";
+        this(new int[] {0,0,0}, Type.GRASS);
     }
-    public String ToString() {
-    return this.terrain; //change this to first letter of the type of terrain later.
+    public Type getType() {
+        return this.type;
     }
 
 }
