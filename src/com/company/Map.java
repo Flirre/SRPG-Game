@@ -12,14 +12,27 @@ import java.util.Scanner;
 public class Map {
     ArrayList<Tile> map = new ArrayList<Tile>();
 
+    /**
+     * The Map object and what it consists of.
+     * @param map - An ArrayList where all the Tiles will be stored.
+     */
     public Map(ArrayList<Tile> map) {
         this.map = map;
     }
 
+    /**
+     * Create a map of just one tile.
+     * @param tile
+     */
     public Map(Tile tile){
         this.map.add(tile);
     }
 
+    /**
+     * readMap reads a file and generates a Map object.
+     * @param filepath - The path to the map file.
+     * @return - A Map object.
+     */
     public ArrayList<Integer> readMap(String filepath) {
         Scanner mapScan;
         ArrayList<Integer> map = new ArrayList<Integer>();
