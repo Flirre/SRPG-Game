@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -35,10 +36,10 @@ public class Map {
      * @param filepath - The path to the map file.
      * @return - A Map object.
      */
-    public ArrayList readMap(String filepath) {
+    public Map readMap(String filepath) {
         Scanner mapScan;
-        ArrayList map = new ArrayList();
-        System.out.println((map));
+        Map foundMap = new Map();
+        System.out.println((foundMap));
         try {
             mapScan = new Scanner(new File(filepath));
             String mapChar;
@@ -47,19 +48,34 @@ public class Map {
             while(mapScan.hasNext()) {
                 mapChar = mapScan.next();
                 System.out.println(mapChar);
-                try {
-                    map.add(Integer.parseInt(mapChar));
+                //switch-statement, mapChar -> mapTile -> addTile(mapTile)
+                switch (mapChar) {
+                    case "G":
+                        foundMap.map.add(new Tile(Tile.Type.GRASS));
+                        break;
+                    case "W":
+                        foundMap.map.add(new Tile(Tile.Type.WATER));
+                        break;
+                    case "L":
+                        foundMap.map.add(new Tile(Tile.Type.LAVA));
+                        break;
+                    case "S":
+                        foundMap.map.add(new Tile(Tile.Type.STONE));
+                        break;
+                    case "D":
+                        foundMap.map.add(new Tile(Tile.Type.DIRT));
+                        break;
                 }
-                catch (NumberFormatException e) {
-                    //System.out.println("Map read error.");
-                }
+
             }
         }
         catch (FileNotFoundException e) {
             System.out.println("No map was found.");
         }
-        System.out.println(map);
-        return map;
+        for (int i = 0; i<foundMap.map.size(); i++) {
+            System.out.println(foundMap.map.get(i).getType());   
+        }
+        return foundMap;
     }
 
     public Tile getTile(int x, int y, int width) {
@@ -67,7 +83,6 @@ public class Map {
         //System.out.println(tile.getType());//For testing purposes
         return tile;
     }
-
 
 
 
