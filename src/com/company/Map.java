@@ -48,7 +48,7 @@ public class Map {
                     map.add(Integer.parseInt(mapChar));
                 }
                 catch (NumberFormatException e) {
-                System.out.println("Not a number");
+                //System.out.println("Map read error.");
                 }
             }
         }
