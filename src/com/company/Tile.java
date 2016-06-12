@@ -4,24 +4,24 @@ package com.company;
  * Created by flirre on 09/06/16.
  */
 public class Tile {
-    private int[] pos;
+    private int height;
     private Type type;
     public enum Type {
         GRASS, WATER, LAVA, STONE, DIRT
     }
 
-    public Tile(int[] pos, Type type) {
-        this.pos = pos;
+    public Tile(int height, Type type) {
+        this.height = height;
         this.type = type;
     }
 
 
     public Tile (Type type) {
-        this(new int[] {0,0,0}, type);
+        this(0, type);
     }
 
     public Tile() {
-        this(new int[] {0,0,0}, Type.GRASS);
+        this(0, Type.GRASS);
     }
     public Type getType() {
         return this.type;
