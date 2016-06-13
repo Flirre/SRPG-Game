@@ -36,19 +36,21 @@ public class Map {
      * @param filepath - The path to the map file.
      * @return - A Map object.
      */
-    public Map readMap(String filepath) {
-        Scanner mapScan;
+    public Map readMap(String filepath, String hfilepath) {
+        Scanner mapScan, hmapScan;
         Map foundMap = new Map();
         System.out.println((foundMap));
         try {
             mapScan = new Scanner(new File(filepath));
-            String mapChar;
+            hmapScan = new Scanner(new File(hfilepath));
+            String mapChar, hmapChar;
+            int i =0;
             mapScan.useDelimiter(" ");
+            hmapScan.useDelimiter(" ");
 
             while(mapScan.hasNext()) {
                 mapChar = mapScan.next();
                 System.out.println(mapChar);
-                //switch-statement, mapChar -> mapTile -> addTile(mapTile)
                 switch (mapChar) {
                     case "G":
                         foundMap.map.add(new Tile(Tile.Type.GRASS));
@@ -68,12 +70,24 @@ public class Map {
                 }
 
             }
+
+            while(hmapScan.hasNext()) {
+                try {
+                    hmapChar = hmapScan.next();
+                    foundMap.getTile(i, 0, 1).setHeight(Integer.parseInt(hmapChar));
+                    i++;
+                }
+                catch (NumberFormatException e){
+
+                }
+            }
         }
         catch (FileNotFoundException e) {
             System.out.println("No map was found.");
         }
         for (int i = 0; i<foundMap.map.size(); i++) {
-            System.out.println(foundMap.map.get(i).getType());   
+            System.out.println(foundMap.map.get(i).getType());
+            System.out.println(foundMap.map.get(i).getHeight());
         }
         return foundMap;
     }
