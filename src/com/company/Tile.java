@@ -27,4 +27,15 @@ public class Tile {
         return this.type;
     }
 
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 }
