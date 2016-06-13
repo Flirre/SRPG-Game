@@ -43,7 +43,7 @@ public class Main {
         //System.out.println(testTile.getType());
         System.out.println("printing map..");
         System.out.println(map);
-        Map map1 = map.readMap("maps/map3.txt"); // Just change ArrayList stuff to Map when readmap has been updated.
+        Map map1 = map.readMap("maps/map1.txt", "maps/map1h.txt"); // Just change ArrayList stuff to Map when readmap has been updated.
         //System.out.println(map.getTile(0,0,1).getType());
     }
 
