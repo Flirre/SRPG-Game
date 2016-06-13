@@ -5,6 +5,6 @@ package com.company;
  */
 public class Warrior extends Job {
     public Warrior(){
-    super(10, 2, 6, 4, 2, 1, 1); //growth
+        super(10, 2, 6, 4, 2, 1, 1); //growth
     }
 }
