@@ -1,6 +1,5 @@
 package com.company;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -67,6 +66,8 @@ public class Map {
                     case "D":
                         foundMap.map.add(new Tile(Tile.Type.DIRT));
                         break;
+                    case ".":
+                        foundMap.map.add(new Tile(Tile.Type.EMPTY));
                 }
 
             }
