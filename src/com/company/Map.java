@@ -94,7 +94,6 @@ public class Map {
 
     public Tile getTile(int x, int y, int width) {
         Tile tile = this.map.get(x * width + y);
-        //System.out.println(tile.getType());//For testing purposes
         return tile;
     }
 
