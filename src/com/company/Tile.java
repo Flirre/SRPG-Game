@@ -7,7 +7,7 @@ public class Tile {
     private int height;
     private Type type;
     public enum Type {
-        GRASS, WATER, LAVA, STONE, DIRT
+        GRASS, WATER, LAVA, STONE, DIRT, EMPTY
     }
 
     public Tile(int height, Type type) {
