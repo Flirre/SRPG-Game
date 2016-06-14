@@ -5,7 +5,7 @@ package com.company;
  */
 public class Sword extends Weapon {
 
-    public Sword (String name, int weight, int durability, int damage) {
-        super(name, weight, durability, damage);
+    public Sword (String name, int weight, int durability, int damage, int range) {
+        super(name, weight, durability, damage, range);
     }
 }

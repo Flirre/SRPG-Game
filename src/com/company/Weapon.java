@@ -5,9 +5,11 @@ package com.company;
  */
 public class Weapon extends Equipment {
     protected int damage;
+    protected int range;
 
-    public Weapon(String name, int weight, int durability, int damage){
+    public Weapon(String name, int weight, int durability, int damage, int range){
         super(name, weight, durability);
         this.damage = damage;
+        this.range = range;
     }
 }
